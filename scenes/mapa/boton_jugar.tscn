@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmmc7b8uqis5l"]
+
+[ext_resource type="Texture2D" uid="uid://ni57fwacklcg" path="res://assets/mapa/start.png" id="1_g8la8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3hyv5"]
+size = Vector2(153, 61)
+
+[node name="BotonJugar" type="Area2D"]
+
+[node name="BotonJugar" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_3hyv5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, -1)
+scale = Vector2(0.70535713, 0.76744187)
+texture = ExtResource("1_g8la8")

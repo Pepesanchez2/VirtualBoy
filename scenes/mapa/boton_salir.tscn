@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg8gl3v5lavui"]
+
+[ext_resource type="Texture2D" uid="uid://c0wj26xv1udke" path="res://assets/mapa/quit.png" id="1_phtm1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_djifk"]
+size = Vector2(157, 64)
+
+[node name="BotonSalir" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 1.0000076)
+scale = Vector2(0.7, 0.767442)
+texture = ExtResource("1_phtm1")
+
+[node name="BotonSalir" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_djifk")

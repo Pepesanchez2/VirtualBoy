@@ -1,0 +1,55 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "C:/Users/Pepe/Documents/GitHub/Goblin-Mayhem-TD/assets/level/Map/islas1.tmx",
+    "expandedProjectPaths": [
+        ".godot/mono/temp/bin",
+        ".godot/mono",
+        ".godot/mono/temp",
+        "."
+    ],
+    "file.lastUsedOpenFilter": "Todos los archivos (*)",
+    "fileStates": {
+        "C:/Users/Pepe/Documents/GitHub/Goblin-Mayhem-TD/assets/level/Map/Example.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/Pepe/Documents/GitHub/Goblin-Mayhem-TD/assets/level/Map/islas1.tmx": {
+            "scale": 0.028117816091954025,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 6970.669391926418,
+                "y": 3289.7291773122115
+            }
+        },
+        "C:/Users/Pepe/Documents/GitHub/Goblin-Mayhem-TD/assets/level/Map/mapa2 - copia.tmx": {
+            "scale": 0.028117816091954025,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 6970.669391926418,
+                "y": 3289.7291773122115
+            }
+        },
+        "Terrain (16x16).tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 4
+        }
+    },
+    "last.imagePath": "C:/Users/Pepe/Documents/projecto-1 - copia/assets/mapa",
+    "openFiles": [
+        "Terrain (16x16).tsx",
+        "C:/Users/Pepe/Documents/GitHub/Goblin-Mayhem-TD/assets/level/Map/islas1.tmx"
+    ],
+    "project": "sin nombre.tiled-project",
+    "recentFiles": [
+        "Terrain (16x16).tsx",
+        "C:/Users/Pepe/Documents/GitHub/Goblin-Mayhem-TD/assets/level/Map/islas1.tmx",
+        "C:/Users/Pepe/Documents/GitHub/Goblin-Mayhem-TD/assets/level/Map/mapa2 - copia.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}

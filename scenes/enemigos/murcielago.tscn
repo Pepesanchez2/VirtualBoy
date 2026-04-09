@@ -1,0 +1,153 @@
+[gd_scene load_steps=22 format=3 uid="uid://cnw38k8be8wxj"]
+
+[ext_resource type="Script" uid="uid://cqgdnrt3m24c3" path="res://scripts/enemigos/Murcielago.cs" id="1_4kn1g"]
+[ext_resource type="Texture2D" uid="uid://d2opctk4bwedg" path="res://assets/enemigos/Flying (46x30).png" id="1_n7y38"]
+[ext_resource type="Texture2D" uid="uid://3o37fllws5hl" path="res://assets/enemigos/Ceiling In (46x30).png" id="2_4kn1g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxanf"]
+atlas = ExtResource("1_n7y38")
+region = Rect2(0, 0, 46, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkjnr"]
+atlas = ExtResource("1_n7y38")
+region = Rect2(46, 0, 46, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dq5dv"]
+atlas = ExtResource("1_n7y38")
+region = Rect2(92, 0, 46, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhbmv"]
+atlas = ExtResource("1_n7y38")
+region = Rect2(138, 0, 46, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pal5e"]
+atlas = ExtResource("1_n7y38")
+region = Rect2(184, 0, 46, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5811"]
+atlas = ExtResource("1_n7y38")
+region = Rect2(230, 0, 46, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qej1q"]
+atlas = ExtResource("1_n7y38")
+region = Rect2(276, 0, 46, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kn1g"]
+atlas = ExtResource("2_4kn1g")
+region = Rect2(0, 0, 46, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqnt3"]
+atlas = ExtResource("2_4kn1g")
+region = Rect2(92, 0, 46, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0rho"]
+atlas = ExtResource("2_4kn1g")
+region = Rect2(138, 0, 46, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ga2vq"]
+atlas = ExtResource("2_4kn1g")
+region = Rect2(184, 0, 46, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5txm"]
+atlas = ExtResource("2_4kn1g")
+region = Rect2(230, 0, 46, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bitl5"]
+atlas = ExtResource("2_4kn1g")
+region = Rect2(276, 0, 46, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_14yip"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxanf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkjnr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dq5dv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhbmv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pal5e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5811")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qej1q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kn1g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqnt3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0rho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ga2vq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e5txm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bitl5")
+}],
+"loop": false,
+"name": &"morirse",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4kn1g"]
+size = Vector2(12, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n7y38"]
+size = Vector2(13, 13)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4kn1g"]
+radius = 6.0
+height = 16.491882
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bxanf"]
+size = Vector2(60, 61)
+
+[node name="murcielago" type="CharacterBody2D"]
+script = ExtResource("1_4kn1g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_14yip")
+autoplay = "default"
+
+[node name="AreaMorirse" type="Area2D" parent="."]
+
+[node name="Morirse" type="CollisionShape2D" parent="AreaMorirse"]
+position = Vector2(-2, -8)
+shape = SubResource("RectangleShape2D_4kn1g")
+
+[node name="AreaMatar" type="Area2D" parent="."]
+
+[node name="Matar" type="CollisionShape2D" parent="AreaMatar"]
+position = Vector2(-0.5, 3.5)
+shape = SubResource("RectangleShape2D_n7y38")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+rotation = -0.25307274
+shape = SubResource("CapsuleShape2D_4kn1g")
+
+[node name="AreaVer" type="Area2D" parent="."]
+
+[node name="Ver" type="CollisionShape2D" parent="AreaVer"]
+position = Vector2(-37, -20.5)
+shape = SubResource("RectangleShape2D_bxanf")

@@ -1,0 +1,83 @@
+[gd_scene load_steps=13 format=3 uid="uid://c4yxnnfk2whtj"]
+
+[ext_resource type="Texture2D" uid="uid://btcbj5now01w" path="res://assets/trampas/On (38x38).png" id="1_jwbgu"]
+[ext_resource type="Script" uid="uid://day5euqeidwh7" path="res://scripts/trampas/Sierra.cs" id="1_wauqg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wauqg"]
+atlas = ExtResource("1_jwbgu")
+region = Rect2(0, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53k6p"]
+atlas = ExtResource("1_jwbgu")
+region = Rect2(38, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fnso"]
+atlas = ExtResource("1_jwbgu")
+region = Rect2(76, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7rrm"]
+atlas = ExtResource("1_jwbgu")
+region = Rect2(114, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4r748"]
+atlas = ExtResource("1_jwbgu")
+region = Rect2(152, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gq1w"]
+atlas = ExtResource("1_jwbgu")
+region = Rect2(190, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkrdr"]
+atlas = ExtResource("1_jwbgu")
+region = Rect2(228, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yuxv5"]
+atlas = ExtResource("1_jwbgu")
+region = Rect2(266, 0, 38, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_58kn4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wauqg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53k6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fnso")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7rrm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4r748")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5gq1w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nkrdr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yuxv5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 64.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8b2bt"]
+radius = 19.0
+
+[node name="sierra" type="Area2D"]
+texture_filter = 1
+script = ExtResource("1_wauqg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_58kn4")
+autoplay = "default"
+frame_progress = 0.6680744
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8b2bt")
