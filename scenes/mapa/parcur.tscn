@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=4 uid="uid://0m6adolgqf5"]
+[gd_scene load_steps=14 format=4 uid="uid://0m6adolgqf5"]
 
+[ext_resource type="Script" uid="uid://bdw4s87p5db0b" path="res://scripts/mapa/Parcur.cs" id="1_salff"]
 [ext_resource type="Texture2D" uid="uid://bbgrmay3a25ma" path="res://assets/mapa/Gray.png" id="1_tkmsk"]
 [ext_resource type="Texture2D" uid="uid://udwuy0au8p7y" path="res://assets/mapa/Terrain (16x16).png" id="2_i7aj2"]
 [ext_resource type="PackedScene" uid="uid://cnw38k8be8wxj" path="res://scenes/enemigos/murcielago.tscn" id="3_6xs1l"]
@@ -9,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://r6wt3jud8yrq" path="res://scenes/mapa/tp_nivel_2.tscn" id="7_6xs1l"]
 [ext_resource type="Script" uid="uid://dr3onj7185ong" path="res://scripts/mapa/Camera2d.cs" id="7_gq3lk"]
 [ext_resource type="Script" uid="uid://dfh85yro8gge" path="res://scripts/mapa/TpNivel2.cs" id="8_ekxhr"]
+[ext_resource type="AudioStream" uid="uid://5lxdkdo3mib0" path="res://assets/sounds/nivel1.wav" id="11_cd6us"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lll2x"]
 texture = ExtResource("2_i7aj2")
@@ -182,6 +184,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lll2x")
 
 [node name="Node" type="Node"]
+script = ExtResource("1_salff")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
@@ -227,3 +230,6 @@ position = Vector2(617, 235)
 [node name="sierra3" parent="." instance=ExtResource("3_i7aj2")]
 z_index = 1
 position = Vector2(773, 202)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_cd6us")

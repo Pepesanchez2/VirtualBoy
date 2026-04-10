@@ -4,18 +4,25 @@ public partial class JumpingMovementState : State
 {
     private Personaje _player;
 
+    private AudioStreamPlayer2D jumpSound;
+
+    private CharacterBody2D player;
+
     private AnimatedSprite2D sprite;
 
 
     public override async void Ready()
     {
         _player = (Personaje)GetTree().GetFirstNodeInGroup("Personajegroup");
+        player = GetOwner<CharacterBody2D>();
+        jumpSound = player.GetNode<AudioStreamPlayer2D>("Sounds/JumpSound");
         sprite = _player.GetNode<AnimatedSprite2D>("AnimatedSprite2D");
         if (!_player.IsNodeReady())
             await ToSignal(_player, "ready");
     }
     public override void Enter()
     {
+        jumpSound.Play();
         _player.SetAnimation("jumping");
     }
 

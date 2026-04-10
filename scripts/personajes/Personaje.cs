@@ -3,6 +3,8 @@ using System;
 
 public partial class Personaje : CharacterBody2D
 {
+
+	private AudioStreamPlayer2D DieSound;
 	public float Speed = 150.0f;
 	public  float JumpVelocity = -300.0f;
 
@@ -19,11 +21,13 @@ public partial class Personaje : CharacterBody2D
     {
 		sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		stateMachine = GetNode<StateMachine>("MovementStateMachine");
+		DieSound = GetNode<AudioStreamPlayer2D>("Sounds/DieSound");
     }
 
 	 public void Morirse()
 		{
         CollisionMask = 1;
+		DieSound.Play();
         stateMachine.TransitionTo("DieMovementState");
 		}
 

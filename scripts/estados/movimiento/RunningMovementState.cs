@@ -4,18 +4,24 @@ public partial class RunningMovementState : State
 {
     private Personaje _player;
 
+    private AudioStreamPlayer2D walkSound;
+    private CharacterBody2D player;
+
     private AnimatedSprite2D sprite;
 
 
     public override async void Ready()
     {
         _player = (Personaje)GetTree().GetFirstNodeInGroup("Personajegroup");
+        player = GetOwner<CharacterBody2D>();
+        walkSound = player.GetNode<AudioStreamPlayer2D>("Sounds/WalkSound");
         sprite = _player.GetNode<AnimatedSprite2D>("AnimatedSprite2D");
         if (!_player.IsNodeReady())
             await ToSignal(_player, "ready");
     }
     public override void Enter()
     {
+        walkSound.Play();
         _player.SetAnimation("running");
     }
 

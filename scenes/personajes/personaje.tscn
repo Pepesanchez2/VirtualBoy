@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://ds87ceslka60n"]
+[gd_scene load_steps=57 format=3 uid="uid://ds87ceslka60n"]
 
 [ext_resource type="Texture2D" uid="uid://ctdshp227sars" path="res://assets/personajes/Idle (32x32).png" id="1_2kcgv"]
 [ext_resource type="Script" uid="uid://b55nnsrq50l27" path="res://scripts/personajes/Personaje.cs" id="1_n1ehy"]
@@ -11,7 +11,10 @@
 [ext_resource type="Script" uid="uid://cwfsualek3ii3" path="res://scripts/estados/StateMachine.cs" id="6_elh7o"]
 [ext_resource type="Texture2D" uid="uid://hug0jupoxcww" path="res://assets/personajes/Hit (32x32).png" id="6_flda0"]
 [ext_resource type="Script" uid="uid://dyudwchtkvshl" path="res://scripts/estados/movimiento/FallingMovementState.cs" id="8_0agpj"]
+[ext_resource type="AudioStream" uid="uid://csgtuqx1o8eig" path="res://assets/sounds/salto.wav" id="8_1sadr"]
 [ext_resource type="Script" uid="uid://ck7jumvtk5k2f" path="res://scripts/estados/movimiento/JumpingMovementState.cs" id="9_a5afe"]
+[ext_resource type="AudioStream" uid="uid://dsvvnvt8436t5" path="res://assets/sounds/correr.wav" id="9_alm3o"]
+[ext_resource type="AudioStream" uid="uid://ddkqbpdie6wsq" path="res://assets/sounds/morir.wav" id="10_o0j3f"]
 [ext_resource type="Script" uid="uid://hcl54gk7pyoa" path="res://scripts/estados/movimiento/DoubleJumpMovementState.cs" id="11_0agpj"]
 [ext_resource type="Script" uid="uid://bb86v6j5do5hb" path="res://scripts/estados/movimiento/DieMovementState.cs" id="14_y81x4"]
 
@@ -328,6 +331,17 @@ texture_filter = 1
 position = Vector2(1, -4)
 sprite_frames = SubResource("SpriteFrames_vylx4")
 autoplay = "default"
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("8_1sadr")
+
+[node name="WalkSound" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("9_alm3o")
+
+[node name="DieSound" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("10_o0j3f")
 
 [node name="MovementStateMachine" type="Node" parent="."]
 script = ExtResource("6_elh7o")

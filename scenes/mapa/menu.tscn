@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=4 uid="uid://bv7voehyglv36"]
+[gd_scene load_steps=13 format=4 uid="uid://bv7voehyglv36"]
 
 [ext_resource type="Texture2D" uid="uid://bbgrmay3a25ma" path="res://assets/mapa/Gray.png" id="1_h5bdb"]
+[ext_resource type="Script" uid="uid://khi818bfamxf" path="res://scripts/mapa/Menu.cs" id="1_o0oaw"]
 [ext_resource type="Texture2D" uid="uid://udwuy0au8p7y" path="res://assets/mapa/Terrain (16x16).png" id="2_qq3ah"]
 [ext_resource type="PackedScene" uid="uid://bi6vwkyo5ufma" path="res://scenes/trampas/lava.tscn" id="4_d4h0w"]
 [ext_resource type="PackedScene" uid="uid://cmmc7b8uqis5l" path="res://scenes/mapa/boton_jugar.tscn" id="4_siejn"]
@@ -8,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ds87ceslka60n" path="res://scenes/personajes/personaje.tscn" id="6_7vfjw"]
 [ext_resource type="PackedScene" uid="uid://cg8gl3v5lavui" path="res://scenes/mapa/boton_salir.tscn" id="6_qq3ah"]
 [ext_resource type="Script" uid="uid://bn438sq5o2jfy" path="res://scripts/mapa/BotonSalir.cs" id="7_o0oaw"]
+[ext_resource type="AudioStream" uid="uid://cmxark4cjbutr" path="res://assets/sounds/menu.mp3" id="10_d4h0w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lll2x"]
 texture = ExtResource("2_qq3ah")
@@ -181,6 +183,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lll2x")
 
 [node name="Node" type="Node"]
+script = ExtResource("1_o0oaw")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
@@ -209,3 +212,6 @@ position = Vector2(908, 252)
 script = ExtResource("7_o0oaw")
 
 [node name="lava" parent="." instance=ExtResource("4_d4h0w")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_d4h0w")
